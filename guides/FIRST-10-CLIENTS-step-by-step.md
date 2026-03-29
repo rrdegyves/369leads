@@ -40,7 +40,7 @@ Combines your **existing outreach pack** with **2026-style** volume, multichanne
 
 ## Phase 1 — Clients 1–3 (proof + cashflow)
 
-**Goal:** Revenue + **case study** + **testimonial** (even if anonymized: “Midwest roofer, 38 leads month 1”).
+**Goal:** Revenue + **case study** + **testimonial** (even if anonymized: “Regional roofer, 20+ qualified leads month 1 on Growth”).
 
 **Pricing:** Optional **$1,500 Starter** or **~10–20% off month 1** for speed **only** if you need cash—**still** use contract + guarantee.
 

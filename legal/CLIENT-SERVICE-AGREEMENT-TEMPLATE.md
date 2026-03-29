@@ -41,7 +41,7 @@ A **Qualified Lead** means a submission that meets **all** of the following, as 
 
 ## 4. Performance commitment (optional — match your deck)
 
-4.1 **First 30 days:** If Agency delivers **fewer than [15 / 30 / 50]** Qualified Leads in the first **30 consecutive days** following **Go-Live Date** (defined below), Client’s **second month** retainer is reduced by **50%**, applied as an **account credit on the next invoice** (not cash refund to card), provided Client was not in **material breach** of Section 5.2.
+4.1 **First 30 days:** If Agency delivers **fewer than [10 / 20 / 25]** Qualified Leads in the first **30 consecutive days** following **Go-Live Date** (defined below), Client’s **second month** retainer is reduced by **50%**, applied as an **account credit on the next invoice** (not cash refund to card), provided Client was not in **material breach** of Section 5.2.
 
 4.2 **Go-Live Date** is the date Agency first places ads or lead forms live **after** Client completes **access and assets** listed in Exhibit B, or **[7]** days after kickoff whichever is later if delay is solely Client-side.
 

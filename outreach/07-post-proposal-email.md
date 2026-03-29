@@ -8,7 +8,7 @@ Great speaking with you. As discussed:
 
 - **Tier recommended:** [Starter $1,500 / Growth $2,500 / Domination $4,500]  
 - **Territory:** [ZIPs / radius]  
-- **Guarantee:** [15 / 30 / 50]+ qualified leads in first 30 days or month 2 at 50% off—per attached one-pager  
+- **Guarantee:** [10 / 20 / 25]+ qualified leads in first 30 days or month 2 at 50% off—per attached one-pager  
 - **Next step:** Agreement + first payment → kickoff within 48 hours → live ads targeting ~7 days after assets received
 
 Attached: one-page partnership deck (PDF).

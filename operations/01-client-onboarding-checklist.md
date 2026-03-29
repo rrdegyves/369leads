@@ -41,7 +41,7 @@ Use from the moment a prospect says yes through day 7 live. Aligns with *Roofing
 
 - [ ] Client confirms they received test lead end-to-end
 - [ ] Next bi-weekly or weekly call on calendar (per tier)
-- [ ] Internal note: CPL baseline, tier, guarantee threshold (15 / 30 / 50 leads in 30 days)
+- [ ] Internal note: CPL baseline, tier, guarantee threshold (10 / 20 / 25 qualified leads in first 30 days)
 
 ---
 

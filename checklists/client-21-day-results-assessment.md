@@ -28,7 +28,7 @@
 
 - [ ] **Ad spend** pacing on track? ☐ Yes ☐ No — notes: ___________  
 - [ ] **Creative fatigue** yet? Agency rotating hooks? ☐ Yes ☐ N/A  
-- [ ] **Guarantee progress:** For [15/30/50] in **30 days**, you need **~_____** by day 30 — on track? ☐ Yes ☐ At risk
+- [ ] **Guarantee progress:** For [10/20/25] in **30 days**, you need **~_____** by day 30 — on track? ☐ Yes ☐ At risk
 
 ## E. Decisions before day 30
 

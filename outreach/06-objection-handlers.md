@@ -22,4 +22,4 @@
    What’s the main uncertainty—results, price, or timing? Territory isn’t infinite; I can hold until [date] if helpful.
 
 8. **“Too expensive.”**  
-   What are you spending now per job acquired? *(pause)* Does **$2,500** still look expensive against **$60k–80k** in revenue if you close 6–8 jobs?
+   What are you spending now per job acquired? *(pause)* Does **$2,500** still look expensive against **~$55k+** in modeled revenue if you close **around five** roofs at typical ticket?

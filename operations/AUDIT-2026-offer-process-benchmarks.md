@@ -13,7 +13,7 @@ This document benchmarks your **pack** against common **2026 home-services / con
 | Retainer vs PPL | Retainer + defined deliverables | Standard for “partner” positioning; many contractors still compare to **$/lead** | **Strong** — translate retainer to **effective CPL** in sales (you already do in ROI tool) |
 | Exclusivity | Territory lock | High differentiation vs marketplaces | **Strong** |
 | Guarantee | Qualified lead count → month-2 credit | Prefer **credit** over cash refund (chargeback risk) | **Strong** — already in legal template |
-| Tiers | $1.5k / $2.5k / $4.5k | Roofing **CPL** bands in public benchmarks often **~$150–$230+** for paid social/search; your **effective CPL** at Growth ($2,500 ÷ 40 = **$62.50**) is **value** if quality holds | **Strong story** — must **prove quality** with CRM + speed-to-lead |
+| Tiers | $1.5k / $2.5k / $4.5k — **planning ranges:** ~10–15 / ~20–25 / **30+** qualified leads/mo (market-dependent) | Same CPL bands; Growth **effective CPL** at ~22 leads ($2,500 ÷ 22 ≈ **$114**) is still **favorable vs** many public roofing CPL bands **if** exclusivity + speed hold | **Honest positioning** — avoids over-promising; still sell **system + territory** |
 
 **Add (recommended):**
 
@@ -93,5 +93,35 @@ Use carefully in calls; cite as “industry ranges, not promises.”
 | Delivery SOP | B+ | SAC + SLA + incidents close the gap |
 | Prospect trust | A- | Calculator + decks; add privacy/terms if needed |
 | Scalable acquisition | B | See `guides/FIRST-10-CLIENTS-step-by-step.md` |
+
+---
+
+## 8. Repo deliverables completed (conservative tier reset — March 2026)
+
+The following were **updated in-repo** so offer, site, and templates stay aligned:
+
+- **`index.html`** — tier copy: Starter (ads + management + **Slack**), lead **ranges**, **30-day guarantees** 10 / 20 / 25 qualified.
+- **`roi-calculator.html`** + **`roi-calculator.js`** — tier presets (12 / 22 / 32 leads) for modeling.
+- **`deck/sales-deck-*.html`** — all three decks: headlines, lists, ROI tables, guarantees.
+- **`legal/CLIENT-SERVICE-AGREEMENT-TEMPLATE.md`**, **`operations/03-service-agreement-key-terms.md`** — guarantee brackets.
+- **`operations/01-client-onboarding-checklist.md`**, **`onboarding/emails/01-welcome-onboarding.md`**, **`checklists/client-21-day-results-assessment.md`** — internal + client-facing guarantee numbers.
+- **`outreach/02`, `05`, `06`, `07`**, **`guides/FIRST-10-CLIENTS-step-by-step.md`**, **`PACK-CONTENTS.txt`**.
+
+**Still not done by code:** attorney-reviewed MSA PDF, live **privacy / terms** pages, Events Manager verification, your real **Slack workspace** invites, and **printed** deck PDFs for each tier.
+
+---
+
+## 9. Your checklist (things only you can do)
+
+1. **Legal:** Merge guarantee **10 / 20 / 25** into executed contracts; attorney sign-off if anything conflicts with old PDFs you already sent.
+2. **Re-print PDFs:** Export fresh **`deck/*.html` → PDF** for proposals; retire old decks with 15/30/50 or inflated lead counts.
+3. **Slack (Starter):** Create your client channel pattern; invite clients; confirm **what** you’ll post (weekly summary vs ad-hoc alerts).
+4. **Meta:** Housing **SAC** on every campaign; confirm pixel **PageView**; optional **Lead** events on thank-you pages.
+5. **Privacy / trust:** If you collect data on **369leads.ca**, publish **`/privacy`** (and terms if needed); link from footer and ad flows.
+6. **Stripe / billing:** Confirm product descriptions match new copy (no obsolete “50 lead” language).
+7. **Sales discipline:** Use **`outreach/08-ICP-scorecard-roofing.md`** before every proposal—bad-fit ops will miss guarantees even with honest targets.
+8. **First wins:** Fill **`templates/case-study-one-pager.md`** with **real** numbers when you have permission.
+
+---
 
 *This audit is operational guidance, not legal, tax, or Meta compliance advice.*

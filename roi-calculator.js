@@ -25,7 +25,7 @@
 
   function calc() {
     var retainer = Math.max(1, readNum(retainerInput, 2500));
-    var leads = Math.max(0, readNum(leadsInput, 40));
+    var leads = Math.max(0, readNum(leadsInput, 22));
     var closePct = Math.min(100, Math.max(0, readNum(closeInput, 25)));
     var jobVal = Math.max(1, readNum(jobInput, 11000));
 

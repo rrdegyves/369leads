@@ -8,7 +8,7 @@ Hi [Name],
 
 You showed up when I searched “roofing contractor [City]”—good sign you’re investing in visibility.
 
-I run **exclusive** lead gen for roofing contractors using Meta ads: **one contractor per territory**, **30–50 qualified homeowner leads/month** on our Growth program (Starter available for smaller volume).
+I run **exclusive** lead gen for roofing contractors using Meta ads: **one contractor per territory**, **roughly 20–25 qualified homeowner leads/month** on our Growth program (Starter is lighter volume + Slack; Domination when you need scale).
 
 No shared Angi-style races—just your phone ringing.
 

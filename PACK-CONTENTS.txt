@@ -29,9 +29,9 @@ CLIENT CHECKLISTS (7 / 14 / 21 day)
 
 SALES DECKS — same template as roofing_sales_deck.pdf; print via browser (Cmd+P → Save PDF)
   deck/deck.css
-  deck/sales-deck-starter-1500.html      ($1,500/mo, ~37× ROI model, 15-lead guarantee)
-  deck/sales-deck-growth-2500.html       ($2,500/mo, 44× ROI, 30-lead guarantee) — aligns PDF + plan
-  deck/sales-deck-domination-4500.html   ($4,500/mo, ~61× ROI model, 50-lead guarantee)
+  deck/sales-deck-starter-1500.html      ($1,500/mo, 10–15 leads/mo target, 10+ qualified / 30-day guarantee)
+  deck/sales-deck-growth-2500.html       ($2,500/mo, 20–25 leads/mo target, 20+ qualified / 30-day guarantee)
+  deck/sales-deck-domination-4500.html   ($4,500/mo, 30+ leads/mo target, 25+ qualified / 30-day guarantee)
 
 OPERATIONS
   operations/01-client-onboarding-checklist.md

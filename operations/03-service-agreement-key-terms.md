@@ -24,7 +24,7 @@ Have a licensed attorney review for your state. This is a **checklist of commerc
 
 ## Performance guarantee
 
-- “If fewer than [15 | 30 | 50] qualified leads in first 30 calendar days, month 2 fee is 50% off.”
+- “If fewer than [10 | 20 | 25] qualified leads in first 30 calendar days, month 2 fee is 50% off.” (Starter / Growth / Domination — match printed deck.)
 - How counted (your CRM export vs client’s word)
 - **Does not** guarantee jobs, revenue, or insurance outcomes
 
