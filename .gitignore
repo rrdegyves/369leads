@@ -1,0 +1,9 @@
+# Local Python deps (image generation)
+.pypack/
+
+# macOS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/

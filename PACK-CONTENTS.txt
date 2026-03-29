@@ -1,0 +1,68 @@
+369 Leads — full pack index (from Business Plan 2026 + sales deck expansion)
+================================================================================
+
+WEBSITE (contractor-facing)
+  index.html, styles.css, script.js
+  roi-calculator.html + roi-calculator.js   → live prospect ROI tool
+  campaign/          → homeowner Meta landing + thank-you (white-label per client)
+  assets/            → logo PNG for site + Facebook profile/cover JPGs (see assets/README.md)
+  369LeadsLogo.jpg    → master logo
+
+META / LAUNCH
+  meta/FACEBOOK-PAGE-AND-META-SETUP.md
+  onboarding/WHAT-I-NEED-WEBSITE-AND-META.md   → what you provide to go live
+  guides/KW-LaunchGuide-alignment.md           → maps KW doc to this repo
+
+CLIENT ONBOARDING & PROSPECT
+  onboarding/emails/01-welcome-onboarding.md
+  onboarding/02-client-task-sheet.md
+  onboarding/LAUNCH-READINESS-ANALYSIS.md   → what clients must send for fast Meta launch
+
+LEGAL (template + research — attorney review required)
+  legal/RESEARCH-NOTES-chargebacks-refunds.md
+  legal/CLIENT-SERVICE-AGREEMENT-TEMPLATE.md   → refunds, chargebacks, guarantee as credit, Exhibits
+
+CLIENT CHECKLISTS (7 / 14 / 21 day)
+  checklists/client-07-day-checklist.md
+  checklists/client-14-day-followup-week.md
+  checklists/client-21-day-results-assessment.md
+
+SALES DECKS — same template as roofing_sales_deck.pdf; print via browser (Cmd+P → Save PDF)
+  deck/deck.css
+  deck/sales-deck-starter-1500.html      ($1,500/mo, ~37× ROI model, 15-lead guarantee)
+  deck/sales-deck-growth-2500.html       ($2,500/mo, 44× ROI, 30-lead guarantee) — aligns PDF + plan
+  deck/sales-deck-domination-4500.html   ($4,500/mo, ~61× ROI model, 50-lead guarantee)
+
+OPERATIONS
+  operations/01-client-onboarding-checklist.md
+  operations/02-kickoff-call-agenda.md
+  operations/03-service-agreement-key-terms.md
+  operations/04-weekly-fulfillment-rhythm.md
+  operations/05-meta-special-ad-category-housing-compliance.md
+  operations/06-client-offboarding-data-handling.md
+  operations/07-agency-SLA-to-clients.md
+  operations/AUDIT-2026-offer-process-benchmarks.md   → full offer/process audit vs 2026 benchmarks
+
+GUIDES
+  guides/FIRST-10-CLIENTS-step-by-step.md   → acquisition plan + contractor ad benchmarks summary
+
+TEMPLATES
+  templates/case-study-one-pager.md
+
+OUTREACH (additions)
+  outreach/08-ICP-scorecard-roofing.md
+
+OUTREACH & SALES (copy-paste)
+  outreach/01-cold-dm-and-followups.md
+  outreach/02-cold-email.md
+  outreach/03-linkedin-scripts.md
+  outreach/04-cold-call-opener.md
+  outreach/05-15-minute-sales-call-outline.md
+  outreach/06-objection-handlers.md
+  outreach/07-post-proposal-email.md
+
+SOURCE DOCS (your originals)
+  Roofing_LeadGen_Agency_Business_Plan_2026.docx
+  roofing_sales_deck.pdf
+
+Replace all [brackets] in decks, emails, and footers before sending to prospects.

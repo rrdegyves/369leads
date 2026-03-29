@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+  HOMEOWNER META AD LANDING — 369 Leads / client white-label
+  Before going live:
+  1. Replace [City] and contractor name/phone everywhere.
+  2. Replace proof-strip numbers with client’s real Google reviews or vetted public stats (never fabricate).
+  3. Set form webhook: add data-webhook="https://..." on #roof-lead-form for GHL/Zapier/Make,
+     or point action to your GHL form URL. Instant SMS within 60s is critical (GHL workflow / Zapier).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free roof inspection in [City]. Local team. Storm damage, leaks, and aging roofs. Book your no-obligation inspection." />
+  <title>Free Roof Inspection — [City] | Local Roofing Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="campaign.css" />
+</head>
+<body>
+  <div class="campaign-wrap">
+    <p class="campaign-top">Limited spots this week for <strong>free on-roof inspections</strong> in <strong>[City]</strong> — homeowners only.</p>
+
+    <header class="campaign-header">
+      <div class="container campaign-header-inner">
+        <!-- White-label: use client business name -->
+        <a class="campaign-logo" href="#">[Your Roofing Co.]</a>
+        <a class="campaign-phone" href="tel:+15555551234">(555) 555-1234</a>
+      </div>
+    </header>
+
+    <section class="campaign-hero">
+      <div class="container campaign-hero-grid">
+        <div>
+          <p class="campaign-eyebrow">No obligation · Insurance questions welcome</p>
+          <h1>Free roof inspection for [City] homeowners</h1>
+          <p class="campaign-lead">
+            Worried about hail, wind, or an aging roof? Get a local specialist on your property. We’ll document what we see and walk you through options—repair, replacement, or insurance next steps—without pressure.
+          </p>
+          <ul>
+            <li>Storm or leak concerns — we prioritize urgent issues</li>
+            <li>Honest assessment — you’ll see photos and plain-English notes</li>
+            <li>Fast scheduling — most homeowners hear back the same day</li>
+          </ul>
+          <div class="campaign-cta-inline">
+            <a class="btn-campaign btn-campaign-primary" href="#request">Request my inspection</a>
+            <a class="btn-campaign btn-campaign-secondary" href="#faq">Common questions</a>
+          </div>
+        </div>
+        <div>
+          <div class="proof-strip" aria-label="Trust highlights">
+            <!-- Replace with REAL client stats only -->
+            <div class="proof-item">
+              <strong>[XX]+</strong>
+              <span>Google reviews (update with real count)</span>
+            </div>
+            <div class="proof-item">
+              <strong>[City]</strong>
+              <span>Locally owned &amp; insured</span>
+            </div>
+            <div class="proof-item">
+              <strong>A+</strong>
+              <span>Better Business Bureau (if true)</span>
+            </div>
+            <p class="proof-note">Swap every bracketed item before ads go live. Use public data only—never invent review counts or approval rates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" id="request">
+      <div class="container-narrow">
+        <div class="form-card">
+          <h2>Request your free inspection</h2>
+          <p class="form-intro">Takes under a minute. We use a few quick questions so we only schedule serious homeowners and can route urgent leaks faster.</p>
+
+          <form
+            id="roof-lead-form"
+            class="roof-lead-form"
+            data-webhook=""
+            action="thank-you.html"
+            method="get"
+            novalidate
+          >
+            <div class="form-grid two">
+              <div class="form-field">
+                <label for="full_name">Full name</label>
+                <input id="full_name" name="full_name" type="text" autocomplete="name" required placeholder="Jane Smith" />
+              </div>
+              <div class="form-field">
+                <label for="phone">Mobile phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(555) 555-1234" />
+                <span class="hint">We’ll text you to confirm—we won’t spam.</span>
+              </div>
+              <div class="form-field full">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+              </div>
+              <div class="form-field full">
+                <label for="address">Property address</label>
+                <input id="address" name="address" type="text" autocomplete="street-address" required placeholder="Street, [City], ST ZIP" />
+              </div>
+
+              <p class="qualifier-label">Quick qualifiers (for routing)</p>
+              <div class="form-field">
+                <label for="homeowner">Are you the homeowner?</label>
+                <select id="homeowner" name="homeowner" required>
+                  <option value="">Select…</option>
+                  <option value="yes">Yes, I own this home</option>
+                  <option value="authorized">I’m authorized to schedule for the owner</option>
+                  <option value="no">No / renting</option>
+                </select>
+                <span class="hint">Renters: we only book inspections with the property owner’s approval.</span>
+              </div>
+              <div class="form-field">
+                <label for="roof_age">Approximate roof age</label>
+                <select id="roof_age" name="roof_age" required>
+                  <option value="">Select…</option>
+                  <option value="under_5">Under 5 years</option>
+                  <option value="5_15">5–15 years</option>
+                  <option value="15_25">15–25 years</option>
+                  <option value="25_plus">25+ years / not sure</option>
+                </select>
+                <span class="hint">Helps us bring the right materials and expectations.</span>
+              </div>
+              <div class="form-field full">
+                <label for="concern">What should we know?</label>
+                <select id="concern" name="concern" required>
+                  <option value="">Select…</option>
+                  <option value="storm">Storm or hail damage</option>
+                  <option value="leak">Active leak or water stain</option>
+                  <option value="age">Old roof / planning ahead</option>
+                  <option value="insurance">Insurance question</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label for="notes">Anything else? <span class="hint">(optional)</span></label>
+                <textarea id="notes" name="notes" placeholder="Best times to call, gate codes, etc."></textarea>
+              </div>
+              <div class="form-field full">
+                <label style="display:flex; gap:0.5rem; align-items:flex-start; font-weight:400; cursor:pointer;">
+                  <input type="checkbox" name="consent" value="yes" required style="width:auto; margin-top:0.25rem;" />
+                  <span>I agree to be contacted by phone or text about my inspection. Message/data rates may apply. I can opt out anytime.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-campaign btn-campaign-primary">Get my free inspection</button>
+            </div>
+            <p class="form-legal">For emergencies, call <a href="tel:+15555551234">(555) 555-1234</a> directly. This form is for non-emergency scheduling.</p>
+            <div id="form-error" class="form-error" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container">
+        <h2>What happens after you submit</h2>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Fast text or call</h3>
+            <p>You’ll hear from our team quickly—often within the hour during business hours—to confirm details.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>On-roof inspection</h3>
+            <p>We inspect shingles, flashing, penetrations, and document findings with photos you can keep.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>Clear next steps</h3>
+            <p>Repair, replacement, or insurance paperwork—we explain options in plain language, no hard sell.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container-narrow">
+        <h2>Questions homeowners ask</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              Is the inspection really free?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p>Yes—there’s no charge for the standard roof inspection we advertise here. If you move forward with work, pricing is quoted in writing before anything is signed.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              How soon can someone come out?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p>Weather and season affect timing, but we prioritize active leaks and storm damage. Submit the form or call—we’ll give you real dates, not a vague “soon.”</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              Will you help with my insurance claim?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p>We can document damage and explain what many carriers look for. Coverage decisions are always between you and your insurer—we don’t guarantee claim outcomes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              What if I’m not ready to replace my roof?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p>That’s fine. Many inspections end with minor repairs or “watch this area”—you’ll get an honest read so you can plan on your timeline.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="campaign-footer">
+      <div class="container">
+        <p>&copy; <span id="campaign-year"></span> [Your Roofing Co.] · Licensed &amp; insured · Serving [City] and surrounding areas</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="campaign.js"></script>
+</body>
+</html>

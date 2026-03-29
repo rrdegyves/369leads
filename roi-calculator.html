@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estimate roofing lead ROI: monthly retainer vs leads, close rate, and average job value. Illustrative only." />
+  <title>ROI Calculator — 369 Leads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo logo-with-mark" aria-label="369 Leads home">
+        <img src="assets/369-leads-logo-web.png" alt="369 Leads" class="site-logo-img" width="200" height="297" decoding="async" />
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#pricing">Partnership</a>
+        <a href="roi-calculator.html" aria-current="page">ROI calculator</a>
+        <a class="btn btn-sm btn-primary nav-cta" href="index.html#contact">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="roi-main">
+    <section class="section roi-hero">
+      <div class="container">
+        <p class="eyebrow">For roofing contractors</p>
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Lead ROI calculator</h1>
+        <p class="section-sub" style="margin-bottom: 2rem;">
+          Model monthly retainer against expected leads, your close rate, and average job value. Adjust numbers to match how <em>your</em> company runs.
+        </p>
+
+        <div class="roi-layout">
+          <div class="roi-panel roi-panel-inputs">
+            <h2 class="roi-panel-title">Your inputs</h2>
+            <p class="roi-tier-label">Quick tier presets</p>
+            <div class="roi-tier-row">
+              <button type="button" class="roi-tier-btn" data-tier-retainer="1500" data-tier-leads="20">Starter</button>
+              <button type="button" class="roi-tier-btn is-active" data-tier-retainer="2500" data-tier-leads="40">Growth</button>
+              <button type="button" class="roi-tier-btn" data-tier-retainer="4500" data-tier-leads="100">Domination</button>
+            </div>
+
+            <div class="roi-field">
+              <label for="roi-retainer">Monthly retainer ($)</label>
+              <input id="roi-retainer" type="number" min="1" step="100" value="2500" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-leads">Expected qualified leads / month</label>
+              <input id="roi-leads" type="number" min="0" step="1" value="40" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-close">Close rate (%)</label>
+              <input id="roi-close" type="number" min="0" max="100" step="1" value="25" />
+              <span class="roi-field-hint">Share of leads that become sold jobs</span>
+            </div>
+            <div class="roi-field">
+              <label for="roi-job">Average job value ($)</label>
+              <input id="roi-job" type="number" min="1" step="500" value="11000" />
+              <span class="roi-field-hint">Replacement or typical ticket you care about</span>
+            </div>
+          </div>
+
+          <div class="roi-panel roi-panel-results">
+            <h2 class="roi-panel-title">Estimated outcomes</h2>
+            <p class="roi-results-note">Illustrative math only — not a guarantee of leads, closes, or revenue.</p>
+            <ul class="roi-results-list">
+              <li>
+                <span class="roi-results-label">Jobs closed / month</span>
+                <span class="roi-results-value" id="out-jobs">—</span>
+              </li>
+              <li>
+                <span class="roi-results-label">Revenue from those jobs</span>
+                <span class="roi-results-value roi-results-accent" id="out-revenue">—</span>
+              </li>
+              <li>
+                <span class="roi-results-label">ROI multiple (revenue ÷ retainer)</span>
+                <span class="roi-results-value" id="out-roi">—</span>
+              </li>
+              <li>
+                <span class="roi-results-label">Effective cost per lead (retainer ÷ leads)</span>
+                <span class="roi-results-value" id="out-cpl">—</span>
+              </li>
+              <li>
+                <span class="roi-results-label">Jobs to break even on retainer</span>
+                <span class="roi-results-value" id="out-breakeven">—</span>
+              </li>
+              <li>
+                <span class="roi-results-label">Revenue minus retainer (model)</span>
+                <span class="roi-results-value" id="out-net">—</span>
+              </li>
+            </ul>
+            <a class="btn btn-primary btn-block roi-cta" href="index.html#contact">Discuss your market</a>
+          </div>
+        </div>
+
+        <p class="roi-disclaimer">
+          This tool does not include separate Meta ad spend (if billed outside the retainer), material costs, or labor. Results vary by market, season, and how fast you contact leads. For financial or legal advice, speak with a licensed professional.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo footer-logo">369<span>Leads</span></span>
+      <p class="footer-tag"><a href="index.html" style="color: var(--muted);">← Back to home</a></p>
+      <p class="footer-copy">&copy; <span id="year"></span> 369 Leads.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="roi-calculator.js"></script>
+</body>
+</html>

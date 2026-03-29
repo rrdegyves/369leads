@@ -1,0 +1,236 @@
+/* Sales deck — screen + print (Save as PDF: Print → Save as PDF) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body.deck-body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #111;
+  background: #fff;
+}
+
+.deck-page {
+  max-width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto;
+  padding: 0.55in 0.6in;
+  background: #fff;
+}
+
+.deck-kicker {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+  margin: 0 0 0.35in;
+  border-bottom: 2px solid #111;
+  padding-bottom: 0.2in;
+}
+
+.deck-headline {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 0.12in;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.deck-sub {
+  text-align: center;
+  font-size: 11px;
+  color: #333;
+  margin: 0 0 0.28in;
+  max-width: 5.8in;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deck-price-block {
+  text-align: center;
+  margin: 0.22in 0 0.28in;
+}
+
+.deck-price {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.deck-price-note {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 0.08in;
+}
+
+.deck-price-fine {
+  font-size: 10px;
+  color: #555;
+  margin-top: 0.06in;
+}
+
+.deck-h2 {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0.22in 0 0.1in;
+  border-left: 4px solid #111;
+  padding-left: 0.12in;
+}
+
+.deck-list {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.deck-list li {
+  margin-bottom: 0.12in;
+}
+
+.deck-roi {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  margin: 0.12in 0 0.08in;
+}
+
+.deck-roi th,
+.deck-roi td {
+  border: 1px solid #ccc;
+  padding: 0.1in 0.12in;
+  text-align: left;
+}
+
+.deck-roi th {
+  background: #f4f4f4;
+  font-weight: 700;
+}
+
+.deck-roi td:last-child {
+  font-weight: 700;
+}
+
+.deck-roi-foot {
+  font-size: 9px;
+  color: #555;
+  margin: 0 0 0.14in;
+}
+
+.deck-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.14in;
+  margin: 0.12in 0;
+}
+
+.deck-step {
+  border: 1px solid #ddd;
+  padding: 0.12in;
+  font-size: 9px;
+}
+
+.deck-step strong {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 0.06in;
+}
+
+.deck-guarantee {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.14in 0.16in;
+  font-size: 10px;
+  margin: 0.16in 0;
+}
+
+.deck-guarantee strong {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 9px;
+}
+
+.deck-fit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2in;
+  margin-top: 0.14in;
+  font-size: 9px;
+}
+
+.deck-fit-col h3 {
+  margin: 0 0 0.08in;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.deck-fit-col ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.deck-fit-col li {
+  margin-bottom: 0.06in;
+}
+
+.deck-footer {
+  margin-top: 0.28in;
+  padding-top: 0.14in;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 9px;
+  color: #444;
+}
+
+.deck-footer a {
+  color: #111;
+  font-weight: 600;
+}
+
+.deck-disclaimer {
+  font-size: 8px;
+  color: #777;
+  margin: 0.1in 0 0;
+  text-align: center;
+}
+
+.deck-tier-badge {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #111;
+  color: #fff;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  margin-bottom: 0.15in;
+}
+
+@media print {
+  body.deck-body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .deck-page {
+    margin: 0;
+    padding: 0.5in 0.55in;
+    max-width: none;
+    min-height: auto;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
