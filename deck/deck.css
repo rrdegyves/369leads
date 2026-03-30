@@ -1,6 +1,18 @@
 /* Sales deck — screen + print (Save as PDF: Print → Save as PDF) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 
+:root {
+  --ink: #0f1b2d;
+  --muted: #5a6475;
+  --line: #d6deea;
+  --brand: #f2a33b;
+  --brand-dark: #db8b22;
+  --brand-soft: #fdf1dd;
+  --navy-soft: #eef3fa;
+  --success-bg: #ecf8f1;
+  --success-line: #9cd7b2;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,8 +22,8 @@ body.deck-body {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 11px;
   line-height: 1.45;
-  color: #111;
-  background: #fff;
+  color: var(--ink);
+  background: #f6f8fc;
 }
 
 .deck-page {
@@ -20,6 +32,8 @@ body.deck-body {
   margin: 0 auto;
   padding: 0.55in 0.6in;
   background: #fff;
+  border-top: 8px solid var(--brand);
+  box-shadow: 0 10px 30px rgba(15, 27, 45, 0.08);
 }
 
 .deck-kicker {
@@ -28,9 +42,9 @@ body.deck-body {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #444;
+  color: var(--muted);
   margin: 0 0 0.35in;
-  border-bottom: 2px solid #111;
+  border-bottom: 2px solid var(--brand);
   padding-bottom: 0.2in;
 }
 
@@ -42,12 +56,13 @@ body.deck-body {
   margin: 0 0 0.12in;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 .deck-sub {
   text-align: center;
   font-size: 11px;
-  color: #333;
+  color: var(--muted);
   margin: 0 0 0.28in;
   max-width: 5.8in;
   margin-left: auto;
@@ -57,6 +72,10 @@ body.deck-body {
 .deck-price-block {
   text-align: center;
   margin: 0.22in 0 0.28in;
+  background: linear-gradient(180deg, var(--brand-soft), #fff);
+  border: 1px solid #f4d3a2;
+  border-radius: 10px;
+  padding: 0.18in 0.12in;
 }
 
 .deck-price {
@@ -64,17 +83,19 @@ body.deck-body {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
+  color: var(--brand-dark);
 }
 
 .deck-price-note {
   font-size: 12px;
   font-weight: 600;
   margin-top: 0.08in;
+  color: var(--ink);
 }
 
 .deck-price-fine {
   font-size: 10px;
-  color: #555;
+  color: var(--muted);
   margin-top: 0.06in;
 }
 
@@ -84,8 +105,9 @@ body.deck-body {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0.22in 0 0.1in;
-  border-left: 4px solid #111;
+  border-left: 4px solid var(--brand);
   padding-left: 0.12in;
+  color: var(--ink);
 }
 
 .deck-list {
@@ -106,14 +128,15 @@ body.deck-body {
 
 .deck-roi th,
 .deck-roi td {
-  border: 1px solid #ccc;
+  border: 1px solid var(--line);
   padding: 0.1in 0.12in;
   text-align: left;
 }
 
 .deck-roi th {
-  background: #f4f4f4;
+  background: var(--navy-soft);
   font-weight: 700;
+  color: var(--ink);
 }
 
 .deck-roi td:last-child {
@@ -122,7 +145,7 @@ body.deck-body {
 
 .deck-roi-foot {
   font-size: 9px;
-  color: #555;
+  color: var(--muted);
   margin: 0 0 0.14in;
 }
 
@@ -134,29 +157,34 @@ body.deck-body {
 }
 
 .deck-step {
-  border: 1px solid #ddd;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #fff, #f9fbff);
   padding: 0.12in;
   font-size: 9px;
+  border-radius: 8px;
 }
 
 .deck-step strong {
   display: block;
   font-size: 10px;
   margin-bottom: 0.06in;
+  color: #17365e;
 }
 
 .deck-guarantee {
-  background: #f8f8f8;
-  border: 1px solid #ddd;
+  background: var(--success-bg);
+  border: 1px solid var(--success-line);
   padding: 0.14in 0.16in;
   font-size: 10px;
   margin: 0.16in 0;
+  border-radius: 8px;
 }
 
 .deck-guarantee strong {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 9px;
+  color: #1f5b3d;
 }
 
 .deck-fit {
@@ -172,6 +200,7 @@ body.deck-body {
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: #17365e;
 }
 
 .deck-fit-col ul {
@@ -186,20 +215,20 @@ body.deck-body {
 .deck-footer {
   margin-top: 0.28in;
   padding-top: 0.14in;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--line);
   text-align: center;
   font-size: 9px;
-  color: #444;
+  color: var(--muted);
 }
 
 .deck-footer a {
-  color: #111;
+  color: #17365e;
   font-weight: 600;
 }
 
 .deck-disclaimer {
   font-size: 8px;
-  color: #777;
+  color: #7a8394;
   margin: 0.1in 0 0;
   text-align: center;
 }
@@ -210,7 +239,7 @@ body.deck-body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: #111;
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
   color: #fff;
   padding: 0.15em 0.5em;
   border-radius: 3px;
@@ -228,6 +257,7 @@ body.deck-body {
     padding: 0.5in 0.55in;
     max-width: none;
     min-height: auto;
+    box-shadow: none;
   }
 
   .no-print {
