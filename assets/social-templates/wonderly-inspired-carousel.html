@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>369 Leads — social carousel (export 1080×1350)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --wine: #2c1218;
+      --wine-mid: #3d1a22;
+      --accent: #f26522;
+      --accent-soft: #ff8f4d;
+      --cream: #fdf6f0;
+      --cream-muted: rgba(253, 246, 240, 0.72);
+      --dot: rgba(255, 255, 255, 0.12);
+    }
+    body[data-preset="navy"] {
+      --wine: #0b1424;
+      --wine-mid: #13213c;
+      --accent: #e37e0c;
+      --accent-soft: #f2a33b;
+      --cream: #f0f4fa;
+      --cream-muted: rgba(240, 244, 250, 0.75);
+      --dot: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      font-family: "DM Sans", system-ui, sans-serif;
+    }
+    .toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1rem;
+      background: rgba(20, 20, 20, 0.95);
+      border-bottom: 1px solid #333;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+    .toolbar button {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: #eee;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+    }
+    .toolbar button:hover { border-color: var(--accent); }
+    .toolbar button.is-active {
+      background: #3d1a22;
+      border-color: #f26522;
+      color: #fff;
+    }
+    body[data-preset="navy"] .toolbar button.is-active {
+      background: #13213c;
+      border-color: #e37e0c;
+    }
+    .toolbar label { display: flex; align-items: center; gap: 0.35rem; margin-left: 0.5rem; }
+    .stage {
+      padding-top: 4.5rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, var(--wine) 0%, var(--wine-mid) 55%, #1a0a10 100%);
+      color: var(--cream);
+      flex-shrink: 0;
+    }
+    body[data-preset="navy"] .slide {
+      background: linear-gradient(145deg, var(--wine) 0%, var(--wine-mid) 50%, #0a1628 100%);
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 20%, rgba(242, 101, 34, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 88% 70%, rgba(255, 143, 77, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    body[data-preset="navy"] .slide::before {
+      background-image: radial-gradient(circle at 15% 15%, rgba(227, 126, 12, 0.15) 0%, transparent 42%),
+        radial-gradient(circle at 85% 75%, rgba(242, 163, 59, 0.06) 0%, transparent 38%);
+    }
+    .dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .slide-inner {
+      position: relative;
+      height: 100%;
+      padding: 72px 64px 80px;
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+    .brand-with-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-with-logo img {
+      height: 72px;
+      width: auto;
+      display: block;
+    }
+    .brand-mark {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+    }
+    .brand-mark span { color: var(--accent); }
+    .swipe-hint {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+    }
+    .headline {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 800;
+      font-size: 76px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 32px;
+      max-width: 14ch;
+    }
+    .headline em { font-style: normal; color: var(--accent); }
+    .sub {
+      font-size: 32px;
+      line-height: 1.45;
+      color: var(--cream-muted);
+      max-width: 26ch;
+      margin: 0 0 auto;
+      font-weight: 400;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .cta-bar { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px 40px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent-soft) 0%, var(--accent) 100%);
+      color: #1a0a08;
+      font-size: 26px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 40px rgba(242, 101, 34, 0.35);
+    }
+    body[data-preset="navy"] .cta {
+      color: #0b1424;
+      box-shadow: 0 12px 40px rgba(227, 126, 12, 0.3);
+    }
+    .footnote {
+      font-size: 20px;
+      color: var(--cream-muted);
+      margin-top: 24px;
+      line-height: 1.4;
+    }
+    .slide[data-slide="2"] .headline { font-size: 58px; max-width: 18ch; }
+    .big-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 23px;
+      line-height: 1.5;
+      color: var(--cream);
+      max-width: 36ch;
+    }
+    .slide[data-slide="2"] .big-list li { margin-bottom: 16px; }
+    .big-list li {
+      margin-bottom: 22px;
+      padding-left: 36px;
+      position: relative;
+    }
+    .big-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .quote {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0 0 32px;
+      color: var(--cream);
+      max-width: 22ch;
+    }
+    .quote-attrib { font-size: 24px; color: var(--cream-muted); font-weight: 500; }
+    .hint {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 1rem;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+</head>
+<body data-preset="warm">
+  <div class="toolbar">
+    <span>Slide:</span>
+    <button type="button" data-show="1" class="is-active">1</button>
+    <button type="button" data-show="2">2</button>
+    <button type="button" data-show="3">3</button>
+    <label><input type="checkbox" id="presetNavy" /> Navy preset (matches deck)</label>
+  </div>
+  <p class="hint">
+    Path: <code>369 Leads/assets/social-templates/wonderly-inspired-carousel.html</code> · Export: add
+    <code>?slide=1&amp;export=1</code> (or 2, 3) · optional <code>&amp;preset=navy</code>
+  </p>
+
+  <div class="stage">
+    <div class="slide" data-slide="1" id="slide1">
+      <div class="dots"></div>
+      <div class="slide-inner">
+        <div class="brand-row">
+          <div class="brand-with-logo">
+            <img src="../369-leads-logo-mark-rgba.png" alt="" width="72" height="108" decoding="async" />
+            <div class="brand-mark">369<span>Leads</span></div>
+          </div>
+          <div class="swipe-hint">Swipe →</div>
+        </div>
+        <h1 class="headline">Roofing leads.<br /><em>Your</em> territory.</h1>
+        <p class="sub">Exclusive Meta lead gen for <strong>one roofing contractor</strong> per area — KW, Cambridge &amp; Guelph. Homeowners requesting inspections, not the same lead sold to half the block.</p>
+        <div class="pill-row">
+          <span class="pill">~10–15 → 20–25 → 30+ /mo</span>
+          <span class="pill">By tier · market-dependent</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" data-slide="2" id="slide2" hidden>
+      <div class="dots"></div>
+      <div class="slide-inner">
+        <div class="brand-row">
+          <div class="brand-with-logo">
+            <img src="../369-leads-logo-mark-rgba.png" alt="" width="72" height="108" decoding="async" />
+            <div class="brand-mark">369<span>Leads</span></div>
+          </div>
+          <div class="swipe-hint">Swipe →</div>
+        </div>
+        <h1 class="headline">What we <em>actually</em> sell</h1>
+        <ul class="big-list">
+          <li><strong>Starter $1,500/mo</strong> — Meta placement &amp; management, lead forms, weekly summary, <strong>Slack</strong>, monthly report. Planning ~<strong>10–15</strong> qualified/mo.</li>
+          <li><strong>Growth $2,500/mo</strong> — landing page, GHL + SMS, bi-weekly calls, 3 creatives/mo. Planning ~<strong>20–25</strong>/mo.</li>
+          <li><strong>Domination $4,500/mo</strong> — full funnel + automations, weekly calls &amp; dashboard. Planning <strong>30+</strong>/mo when market &amp; ops allow.</li>
+          <li><strong>First 30 days:</strong> <strong>10 / 20 / 25</strong> qualified (by tier) or month 2 half off — signed definition day one.</li>
+        </ul>
+        <p class="footnote">Planning ranges ≠ promises. Homeowner campaigns: Meta <strong>Housing</strong> special ad category when required.</p>
+      </div>
+    </div>
+
+    <div class="slide" data-slide="3" id="slide3" hidden>
+      <div class="dots"></div>
+      <div class="slide-inner">
+        <div class="brand-row">
+          <div class="brand-with-logo">
+            <img src="../369-leads-logo-mark-rgba.png" alt="" width="72" height="108" decoding="async" />
+            <div class="brand-mark">369<span>Leads</span></div>
+          </div>
+          <div class="swipe-hint">Last</div>
+        </div>
+        <p class="quote">Three retainers. One rule: <em>don’t over-promise</em> the roofers who answer the phone.</p>
+        <p class="quote-attrib">$1,500 · $2,500 · $4,500/mo · ROI calculator on 369leads.ca</p>
+        <div class="cta-bar">
+          <a class="cta" href="https://calendly.com/rrdegyves/consultant-call">Book a free 15-min call</a>
+        </div>
+        <p class="footnote">Exclusive territories · Limited slots · Results vary — not legal or financial advice</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSlide(n) {
+      document.querySelectorAll(".slide").forEach((s) => {
+        s.hidden = s.getAttribute("data-slide") !== n;
+      });
+      document.querySelectorAll("[data-show]").forEach((b) => {
+        b.classList.toggle("is-active", b.getAttribute("data-show") === n);
+      });
+    }
+    document.querySelectorAll("[data-show]").forEach((btn) => {
+      btn.addEventListener("click", () => showSlide(btn.getAttribute("data-show")));
+    });
+    document.getElementById("presetNavy").addEventListener("change", (e) => {
+      document.body.dataset.preset = e.target.checked ? "navy" : "warm";
+    });
+    (function initFromUrl() {
+      const p = new URLSearchParams(window.location.search);
+      if (p.get("preset") === "navy") {
+        document.getElementById("presetNavy").checked = true;
+        document.body.dataset.preset = "navy";
+      }
+      const slide = p.get("slide");
+      if (slide === "1" || slide === "2" || slide === "3") showSlide(slide);
+      if (p.get("export") === "1") {
+        document.querySelector(".toolbar").style.display = "none";
+        document.querySelector(".hint").style.display = "none";
+        document.querySelector(".stage").style.paddingTop = "0";
+      }
+    })();
+  </script>
+</body>
+</html>

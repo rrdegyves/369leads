@@ -1,0 +1,35 @@
+Contractor,Name,Phone,Email,Website,Google Rating,Facebook,1st Contact,Notes (do not import)
+Roofing,Sapphire Roofing Waterloo,15197041233,,N/A,5,N/A,,No website in sheet
+Roofing,D’Angelo and Sons Roofing Waterloo,12262430828,info@dangeloandsons.com,https://dangeloandsons.com/roofing-waterloo/,N/A,https://www.facebook.com/profile.php?id=61573812924825,Y,
+Roofing,Garcia Roofing Ltd.,15195043106,info@garciaroofingltd.com,http://www.garciaroofing.ca/,4.8,https://www.facebook.com/garciaroofingltd,Return the call,
+Roofing,All Pro Roofing & SheetMetal Ltd.,18665387469,info@allproroofinginc.ca,http://www.allproroofing.ca/,3,,,
+Roofing,Premium Roofing Inc.,12267897663,premiumroofinginc@yahoo.com,https://www.premiumroofinginc.com/,5,,,
+Roofing,The Roof Whisperer of Kitchener - Roof Repair & Skylight Contractor,15197837829,service@theroofwhisperer.ca,https://theroofwhisperer.ca/kitchener/,4.9,,,
+Roofing,William's United Roofing,15197815999,roofing818@gmail.com,http://williamsunitedroofing.ca/,4.9,,,
+Roofing,The Roofman Inc,15197443830,jperchaluk@roofman.com,https://www.roofman.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb-listing,4.8,,,
+Roofing,Custom Contracting Roofing & Eavestrough Repair Waterloo,12262431415,info@custom-contracting.ca,https://www.custom-contracting.ca/locations/waterloo?utm_source=google&utm_medium=organic&utm_campaign=GMB_Waterloo&utm_content=profile_link,4.7,,,
+Roofing,"Empire Eavestrough, Roofing & Exteriors Inc.",15198970472,info@empireeavestrough.ca,https://empireeavestrough.ca/,4.9,,,
+Roofing,Reuter Roofing,12269895897,info@reuterroofing.ca,http://www.reuterroofing.ca/,4.2,,,Email obfuscated on site; decoded from Cloudflare token
+Roofing,Quality Care Roofing Inc.,12266068320,ken@qualitycareroofinginc.com,https://www.qualitycareroofinginc.com/,4.9,,,Listed on contact page
+Roofing,Kitchener Affordable Roofing,15484835544,,https://www.kitcheneraffordableroofing.ca/,3.7,,,No public email found (contact form / phone). Site timed out from research IP.
+Roofing,Mara Roofing and Exteriors Inc,15197072670,kmara@maracontracting.ca,http://www.maracontracting.ca/,4.9,,,
+Roofing,Black and White Commercial Roofing,15195787663,admin@blackandwhiteroofing.com,http://www.blackandwhiteroofing.com/,3.5,,,
+Roofing,Quality Roofs | Residential & Commercial Roofing Company,15198277641,info@qualityroofs.ca,https://www.qualityroofs.ca/,5,,,Footer on homepage
+Roofing,KW Roofing | Residential & Commercial Roofing Company,15484055545,,https://www.kwroofing.ca/,,,,kwroofing.ca returned 503 during research; phone 548-405-5545 — verify email by phone
+Roofing,Easy Roofing Cambridge,19053042863,info@dangeloandsons.com,https://easyroofing.ca/roofing-cambridge/,5,,,mailto shown on Easy Roofing Cambridge page (same as D’Angelo contact email on easyroofing.ca)
+Roofing,FS ROOF SYSTEMS AND EXTERIORS,15198274638,tim@fsroofsystems.com,http://www.fsroofsystems.com/,4.9,,,From fsroofsystems.ca/contact (Cloudflare decoded; Tim Demers)
+Roofing,House & Hammer Roofing,15197409912,info@houseandhammerroofing.ca,https://houseandhammerroofing.ca/,5,,,
+Roofing,Grey Goose Roofing,13658667666,,,5,,,No website in sheet
+Roofing,Customersroofing,15195735286,customersroofing@yahoo.ca,https://customersroofing.ca/,4.9,,,
+Roofing,Belmar Roofing,15192676707,quotes@belmarroofing.com,http://www.belmarroofing.com/,3.9,,,
+Roofing,Angel Pro Roofing,12268686611,angelproroofing13@gmail.com,http://angelproroofing.ca/,4.9,,,Public listing; angelproroofing.ca returned 404 — verify before send
+Roofing,Heisler & Sons (Cambridge) Roofing,15196215001,,http://www.heislerandsons.ca/,4.6,,,heislerandsons.ca is contact form + phone only (no email in page text)
+Roofing,Rydel Roofing - Kitchener-Waterloo,18554479335,leads@rydel.ca,https://rydelroofing.ca/,4.7,,,
+Roofing,The Roof Whisperer of Cambridge - Roof Repair & Skylight Contractor,15197837829,service@theroofwhisperer.ca,https://theroofwhisperer.ca/cambridge,5,,,Same brand phone as Kitchener; use service@ unless they give a local inbox
+Roofing,United Roofers INC.- Cambridge,15197071671,info@unitedroofersinc.com,https://unitedroofersinc.com/,5,,,
+Roofing,A Thomson Roofing Inc,15196229283,contactus@thomsonroofing.ca,https://www.thomsonroofing.ca/,4.6,,,
+Roofing,A1 Pros,12269090945,contact@a1pros.ca,https://www.a1pros.ca/,5,,,
+Roofing,Cambridge Flat Roofing,15192127904,francis@cambridgeflatroofing.ca,https://www.cambridgeflatroofing.ca/,,,,
+Roofing,Northern Seal Flat Roofing,15194963551,info@northernsealroofing.ca,http://northernsealroofing.ca/,4.2,,,
+Roofing,Classic Products Metal Roofing Systems Inc,18669697663,info@classicproducts.ca,https://canadianmetalroofing.ca/?utm_source=google-my-business&utm_medium=profile%20url&utm_campaign=main,4.9,,,
+Roofing,Grand Valley Roofing & Coatings Inc,15196234455,gvroofing@grandvalleyservices.ca,http://grandvalleyroofing.ca/,3.2,,,Picked operational inbox over stray npm-script false positives in page source

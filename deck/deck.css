@@ -233,6 +233,18 @@ body.deck-body {
   text-align: center;
 }
 
+.deck-logo {
+  text-align: center;
+  margin: 0 0 0.12in;
+}
+
+.deck-logo img {
+  height: 0.52in;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .deck-tier-badge {
   display: inline-block;
   font-size: 8px;

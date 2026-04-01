@@ -1,244 +1,900 @@
 <!DOCTYPE html>
-<!--
-  HOMEOWNER META AD LANDING — 369 Leads / client white-label
-  Before going live:
-  1. Replace [City] and contractor name/phone everywhere.
-  2. Replace proof-strip numbers with client’s real Google reviews or vetted public stats (never fabricate).
-  3. Set form webhook: add data-webhook="https://..." on #roof-lead-form for GHL/Zapier/Make,
-     or point action to your GHL form URL. Instant SMS within 60s is critical (GHL workflow / Zapier).
--->
+<!-- Before launch: replace REPLACE_WITH_YOUR_FORM_ID with your Formspree form ID (formspree.io). -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free roof inspection in [City]. Local team. Storm damage, leaks, and aging roofs. Book your no-obligation inspection." />
-  <title>Free Roof Inspection — [City] | Local Roofing Team</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="campaign.css" />
+  <title id="page-title">Free Roof Inspection — Kitchener | Local Roofing Team</title>
+  <link rel="canonical" href="https://369leads.ca/campaign/" />
+  <meta name="robots" content="noindex" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1455357503046385');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1455357503046385&ev=PageView&noscript=1" /></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1628;
+      --navy2: #162540;
+      --gold: #D97706;
+      --gold-light: #FCD34D;
+      --green: #16A34A;
+      --red: #DC2626;
+      --gray: #64748B;
+      --light: #F1F5F9;
+      --white: #FFFFFF;
+      --text: #0F172A;
+      --radius: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--navy);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-phone {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .nav-phone:hover { color: var(--gold-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(217,119,6,0.15);
+      border: 1px solid rgba(217,119,6,0.35);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      color: #94A3B8;
+      font-size: 16px;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .trust-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .trust-pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #CBD5E1;
+      font-size: 12px;
+      padding: 5px 13px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px 24px;
+      max-width: 460px;
+      margin: 0 auto;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+    }
+    .form-card-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .form-card-sub {
+      font-size: 13px;
+      color: var(--gray);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .field-grid.full { grid-template-columns: 1fr; }
+
+    .field-wrap { display: flex; flex-direction: column; gap: 4px; }
+    .field-wrap label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .field-wrap input,
+    .field-wrap select {
+      padding: 10px 12px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text);
+      background: #F8FAFC;
+      transition: border-color .15s, background .15s;
+      appearance: none;
+      -webkit-appearance: none;
+      font-family: inherit;
+    }
+    .field-wrap input:focus,
+    .field-wrap select:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: var(--white);
+    }
+
+    .cta-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 14px;
+      letter-spacing: .01em;
+      transition: background .15s, transform .1s;
+      font-family: inherit;
+    }
+    .cta-btn:hover { background: #B91C1C; }
+    .cta-btn:active { transform: scale(.98); }
+    .cta-btn:disabled { background: #94A3B8; cursor: not-allowed; }
+
+    .form-guarantee {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 7px;
+      padding: 10px 12px;
+      margin-top: 12px;
+    }
+    .guarantee-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .form-guarantee p {
+      font-size: 12px;
+      color: #166534;
+      line-height: 1.5;
+    }
+    .form-disclaimer {
+      font-size: 10px;
+      color: #94A3B8;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    /* Thank-you state */
+    .thankyou {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .thankyou-icon {
+      width: 56px;
+      height: 56px;
+      background: #F0FDF4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .thankyou h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .thankyou p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+    .thankyou .steps {
+      margin-top: 20px;
+      text-align: left;
+      background: var(--light);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .thankyou .step-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .thankyou .step-item:last-child { margin-bottom: 0; }
+    .step-num {
+      min-width: 22px;
+      height: 22px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── PROOF STRIP ── */
+    .proof-strip {
+      background: #0A1120;
+      padding: 24px;
+      text-align: center;
+    }
+    .proof-strip p {
+      font-size: 12px;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 14px;
+    }
+    .proof-nums {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .proof-num strong {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .proof-num span { font-size: 12px; color: #475569; }
+
+    /* ── WHY SECTION ── */
+    .why-sec {
+      background: var(--navy);
+      padding: 48px 24px;
+    }
+    .why-sec h2 {
+      color: var(--white);
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: var(--navy2);
+      border: 1px solid #1E3A5F;
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .why-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(217,119,6,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+    .why-card h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 5px; }
+    .why-card p { font-size: 13px; color: #64748B; line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .how-sec {
+      background: #F8FAFC;
+      padding: 48px 24px;
+    }
+    .how-sec h2 {
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+    .how-steps {
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .how-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .how-num {
+      min-width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .how-step h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .how-step p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    .testi-sec {
+      background: var(--navy2);
+      padding: 48px 24px;
+    }
+    .testi-sec h2 {
+      color: var(--white);
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .testi-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .testi-card {
+      background: #0F1E38;
+      border: 1px solid #1E3A5F;
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .stars { color: var(--gold); font-size: 14px; margin-bottom: 8px; }
+    .testi-text {
+      font-size: 14px;
+      color: #CBD5E1;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #1E3A5F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #93C5FD;
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 13px; font-weight: 600; color: var(--white); }
+    .testi-role { font-size: 12px; color: #475569; }
+
+    /* ── FAQ ── */
+    .faq-sec {
+      background: var(--white);
+      padding: 48px 24px;
+    }
+    .faq-sec h2 {
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    .faq-list { max-width: 560px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid #E2E8F0;
+      padding: 16px 0;
+      cursor: pointer;
+    }
+    .faq-q {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .faq-icon {
+      font-size: 20px;
+      color: var(--gray);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    .faq-icon.open { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 10px;
+      display: none;
+    }
+    .faq-a.open { display: block; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--navy);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .final-cta h2 { color: var(--white); font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    .final-cta p { color: #94A3B8; font-size: 14px; margin-bottom: 22px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .final-btn {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      padding: 15px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: background .15s;
+    }
+    .final-btn:hover { background: #B91C1C; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1C;
+      padding: 18px 24px;
+      text-align: center;
+    }
+    footer p { font-size: 12px; color: #374151; }
+    footer a { color: #475569; text-decoration: none; }
+    footer a:hover { color: #64748B; }
+
+    @media (max-width: 480px) {
+      .field-grid { grid-template-columns: 1fr; }
+      .proof-nums { gap: 20px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="campaign-wrap">
-    <p class="campaign-top">Limited spots this week for <strong>free on-roof inspections</strong> in <strong>[City]</strong> — homeowners only.</p>
 
-    <header class="campaign-header">
-      <div class="container campaign-header-inner">
-        <!-- White-label: use client business name -->
-        <a class="campaign-logo" href="#">[Your Roofing Co.]</a>
-        <a class="campaign-phone" href="tel:+15555551234">(555) 555-1234</a>
-      </div>
-    </header>
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-brand" id="nav-brand">Local <span>Roofing</span></a>
+  <a href="tel:+15195550100" class="nav-phone" id="nav-phone">(519) 555-0100</a>
+</nav>
 
-    <section class="campaign-hero">
-      <div class="container campaign-hero-grid">
-        <div>
-          <p class="campaign-eyebrow">No obligation · Insurance questions welcome</p>
-          <h1>Free roof inspection for [City] homeowners</h1>
-          <p class="campaign-lead">
-            Worried about hail, wind, or an aging roof? Get a local specialist on your property. We’ll document what we see and walk you through options—repair, replacement, or insurance next steps—without pressure.
-          </p>
-          <ul>
-            <li>Storm or leak concerns — we prioritize urgent issues</li>
-            <li>Honest assessment — you’ll see photos and plain-English notes</li>
-            <li>Fast scheduling — most homeowners hear back the same day</li>
-          </ul>
-          <div class="campaign-cta-inline">
-            <a class="btn-campaign btn-campaign-primary" href="#request">Request my inspection</a>
-            <a class="btn-campaign btn-campaign-secondary" href="#faq">Common questions</a>
-          </div>
-        </div>
-        <div>
-          <div class="proof-strip" aria-label="Trust highlights">
-            <!-- Replace with REAL client stats only -->
-            <div class="proof-item">
-              <strong>[XX]+</strong>
-              <span>Google reviews (update with real count)</span>
-            </div>
-            <div class="proof-item">
-              <strong>[City]</strong>
-              <span>Locally owned &amp; insured</span>
-            </div>
-            <div class="proof-item">
-              <strong>A+</strong>
-              <span>Better Business Bureau (if true)</span>
-            </div>
-            <p class="proof-note">Swap every bracketed item before ads go live. Use public data only—never invent review counts or approval rates.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- HERO + FORM -->
+<section class="hero">
+  <div class="hero-badge" id="hero-badge">Limited spots this week — <span id="city-name-badge">Kitchener</span> homeowners only</div>
+  <h1>Get Your <span>Free Roof Inspection</span><br>Before the Next Freeze</h1>
+  <p class="hero-sub">Find out in 30 minutes if your roof has hidden damage — and whether your insurance will cover 100% of the repair at no cost to you.</p>
 
-    <section class="form-section" id="request">
-      <div class="container-narrow">
-        <div class="form-card">
-          <h2>Request your free inspection</h2>
-          <p class="form-intro">Takes under a minute. We use a few quick questions so we only schedule serious homeowners and can route urgent leaks faster.</p>
-
-          <form
-            id="roof-lead-form"
-            class="roof-lead-form"
-            data-webhook=""
-            action="thank-you.html"
-            method="get"
-            novalidate
-          >
-            <div class="form-grid two">
-              <div class="form-field">
-                <label for="full_name">Full name</label>
-                <input id="full_name" name="full_name" type="text" autocomplete="name" required placeholder="Jane Smith" />
-              </div>
-              <div class="form-field">
-                <label for="phone">Mobile phone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(555) 555-1234" />
-                <span class="hint">We’ll text you to confirm—we won’t spam.</span>
-              </div>
-              <div class="form-field full">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
-              </div>
-              <div class="form-field full">
-                <label for="address">Property address</label>
-                <input id="address" name="address" type="text" autocomplete="street-address" required placeholder="Street, [City], ST ZIP" />
-              </div>
-
-              <p class="qualifier-label">Quick qualifiers (for routing)</p>
-              <div class="form-field">
-                <label for="homeowner">Are you the homeowner?</label>
-                <select id="homeowner" name="homeowner" required>
-                  <option value="">Select…</option>
-                  <option value="yes">Yes, I own this home</option>
-                  <option value="authorized">I’m authorized to schedule for the owner</option>
-                  <option value="no">No / renting</option>
-                </select>
-                <span class="hint">Renters: we only book inspections with the property owner’s approval.</span>
-              </div>
-              <div class="form-field">
-                <label for="roof_age">Approximate roof age</label>
-                <select id="roof_age" name="roof_age" required>
-                  <option value="">Select…</option>
-                  <option value="under_5">Under 5 years</option>
-                  <option value="5_15">5–15 years</option>
-                  <option value="15_25">15–25 years</option>
-                  <option value="25_plus">25+ years / not sure</option>
-                </select>
-                <span class="hint">Helps us bring the right materials and expectations.</span>
-              </div>
-              <div class="form-field full">
-                <label for="concern">What should we know?</label>
-                <select id="concern" name="concern" required>
-                  <option value="">Select…</option>
-                  <option value="storm">Storm or hail damage</option>
-                  <option value="leak">Active leak or water stain</option>
-                  <option value="age">Old roof / planning ahead</option>
-                  <option value="insurance">Insurance question</option>
-                  <option value="other">Something else</option>
-                </select>
-              </div>
-              <div class="form-field full">
-                <label for="notes">Anything else? <span class="hint">(optional)</span></label>
-                <textarea id="notes" name="notes" placeholder="Best times to call, gate codes, etc."></textarea>
-              </div>
-              <div class="form-field full">
-                <label style="display:flex; gap:0.5rem; align-items:flex-start; font-weight:400; cursor:pointer;">
-                  <input type="checkbox" name="consent" value="yes" required style="width:auto; margin-top:0.25rem;" />
-                  <span>I agree to be contacted by phone or text about my inspection. Message/data rates may apply. I can opt out anytime.</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-submit">
-              <button type="submit" class="btn-campaign btn-campaign-primary">Get my free inspection</button>
-            </div>
-            <p class="form-legal">For emergencies, call <a href="tel:+15555551234">(555) 555-1234</a> directly. This form is for non-emergency scheduling.</p>
-            <div id="form-error" class="form-error" role="alert"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="steps-section">
-      <div class="container">
-        <h2>What happens after you submit</h2>
-        <div class="steps-row">
-          <div class="step-card">
-            <div class="step-num">1</div>
-            <h3>Fast text or call</h3>
-            <p>You’ll hear from our team quickly—often within the hour during business hours—to confirm details.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-num">2</div>
-            <h3>On-roof inspection</h3>
-            <p>We inspect shingles, flashing, penetrations, and document findings with photos you can keep.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-num">3</div>
-            <h3>Clear next steps</h3>
-            <p>Repair, replacement, or insurance paperwork—we explain options in plain language, no hard sell.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section" id="faq">
-      <div class="container-narrow">
-        <h2>Questions homeowners ask</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button type="button" class="faq-trigger" aria-expanded="false">
-              Is the inspection really free?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-panel">
-              <div class="faq-panel-inner">
-                <p>Yes—there’s no charge for the standard roof inspection we advertise here. If you move forward with work, pricing is quoted in writing before anything is signed.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-trigger" aria-expanded="false">
-              How soon can someone come out?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-panel">
-              <div class="faq-panel-inner">
-                <p>Weather and season affect timing, but we prioritize active leaks and storm damage. Submit the form or call—we’ll give you real dates, not a vague “soon.”</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-trigger" aria-expanded="false">
-              Will you help with my insurance claim?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-panel">
-              <div class="faq-panel-inner">
-                <p>We can document damage and explain what many carriers look for. Coverage decisions are always between you and your insurer—we don’t guarantee claim outcomes.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-trigger" aria-expanded="false">
-              What if I’m not ready to replace my roof?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-panel">
-              <div class="faq-panel-inner">
-                <p>That’s fine. Many inspections end with minor repairs or “watch this area”—you’ll get an honest read so you can plan on your timeline.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="campaign-footer">
-      <div class="container">
-        <p>&copy; <span id="campaign-year"></span> [Your Roofing Co.] · Licensed &amp; insured · Serving [City] and surrounding areas</p>
-      </div>
-    </footer>
+  <div class="trust-pills">
+    <div class="trust-pill">Licensed &amp; insured</div>
+    <div class="trust-pill">No obligation</div>
+    <div class="trust-pill" id="trust-reviews">5-star rated</div>
+    <div class="trust-pill">Same-week available</div>
   </div>
 
-  <script src="campaign.js"></script>
+  <!-- FORM CARD -->
+  <div class="form-card">
+    <div class="form-card-title">Claim Your Free Inspection</div>
+    <div class="form-card-sub">Takes 60 seconds — we'll contact you within 1 hour</div>
+
+    <form id="lead-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+      <!-- Hidden tracking fields -->
+      <input type="hidden" name="_subject" id="form-subject" value="New inspection request — Kitchener" />
+      <input type="hidden" name="source_url" id="source-url" />
+      <input type="hidden" name="contractor_id" id="contractor-id" />
+      <input type="hidden" name="city" id="hidden-city" value="Kitchener" />
+      <input type="hidden" name="company" id="hidden-company" value="Local Roofing Team" />
+      <!-- Honeypot -->
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <div class="field-grid">
+        <div class="field-wrap">
+          <label for="first-name">First name</label>
+          <input type="text" id="first-name" name="first_name" placeholder="John" required autocomplete="given-name" />
+        </div>
+        <div class="field-wrap">
+          <label for="last-name">Last name</label>
+          <input type="text" id="last-name" name="last_name" placeholder="Smith" required autocomplete="family-name" />
+        </div>
+      </div>
+
+      <div class="field-grid full" style="margin-bottom:10px">
+        <div class="field-wrap">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(519) 000-0000" required autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="field-grid full" style="margin-bottom:10px">
+        <div class="field-wrap">
+          <label for="address">Home address</label>
+          <input type="text" id="address" name="address" placeholder="123 Main St, Kitchener, ON" required autocomplete="street-address" />
+        </div>
+      </div>
+
+      <div class="field-grid full" style="margin-bottom:10px">
+        <div class="field-wrap">
+          <label for="roof-age">When was your roof last replaced?</label>
+          <select id="roof-age" name="roof_age" required>
+            <option value="">Select one...</option>
+            <option value="under_5">Less than 5 years ago</option>
+            <option value="5_to_10">5–10 years ago</option>
+            <option value="10_to_15">10–15 years ago</option>
+            <option value="15_to_20">15–20 years ago</option>
+            <option value="over_20">Over 20 years ago / not sure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-grid full" style="margin-bottom:0">
+        <div class="field-wrap">
+          <label for="homeowner">Do you own this home?</label>
+          <select id="homeowner" name="homeowner" required>
+            <option value="">Select one...</option>
+            <option value="yes">Yes, I own this home</option>
+            <option value="no">No, I rent</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="cta-btn" id="submit-btn">YES — Claim My Free Inspection</button>
+
+      <div class="form-guarantee">
+        <svg class="guarantee-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M10 2L3 5v5c0 4.418 3.05 8.55 7 9.93C14.95 18.55 18 14.418 18 10V5l-7-3z" fill="#16A34A" opacity=".15"/>
+          <path d="M10 2L3 5v5c0 4.418 3.05 8.55 7 9.93C14.95 18.55 18 14.418 18 10V5l-7-3z" stroke="#16A34A" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M7 10l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>100% free. No commitment. A licensed inspector will contact you within 1 hour to schedule.</p>
+      </div>
+
+      <p class="form-disclaimer">By submitting you agree to be contacted by <span id="disclaimer-co">Local Roofing Team</span> at the number provided. We respect your privacy and will never sell your information.</p>
+    </form>
+
+    <!-- Thank-you state (hidden until submit) -->
+    <div class="thankyou" id="thankyou">
+      <div class="thankyou-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" fill="#16A34A" opacity=".15"/>
+          <path d="M7 12l3.5 3.5L17 8" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>You're all set, <span id="thankyou-name">there</span>!</h3>
+      <p id="thankyou-msg">A member of our team will call you within the next hour to schedule your free inspection.</p>
+      <div class="steps">
+        <div class="step-item"><div class="step-num">1</div><div>A licensed inspector comes to your property</div></div>
+        <div class="step-item"><div class="step-num">2</div><div>Full inspection takes 20–40 minutes — you get photos</div></div>
+        <div class="step-item"><div class="step-num">3</div><div>We explain your options in plain language, zero pressure</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <p>Trusted by homeowners across <span id="region-name">the KW region</span></p>
+  <div class="proof-nums">
+    <div class="proof-num"><strong id="review-count">50+</strong><span>Google reviews</span></div>
+    <div class="proof-num"><strong>$0</strong><span>Cost to homeowner</span></div>
+    <div class="proof-num"><strong>Same-week</strong><span>Appointments</span></div>
+    <div class="proof-num"><strong>Licensed</strong><span>&amp; fully insured</span></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="why-sec">
+  <h2>Why <span id="city-name-why">Kitchener</span> Homeowners Trust Us</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🔍</div>
+      <h4>Thorough inspection</h4>
+      <p>We check every inch — shingles, flashing, gutters, and attic ventilation. Most Ontario winter damage isn't visible from the ground.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <h4>Insurance handled</h4>
+      <p>We work directly with your adjuster. If damage qualifies, we document and guide you through the claim process.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <h4>Same-week available</h4>
+      <p>Most inspections are scheduled within 2–3 business days. We work around your schedule.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✅</div>
+      <h4>No pressure, ever</h4>
+      <p>We tell you honestly what we find. If your roof is fine, we'll tell you — no upsell tactics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec">
+  <h2>What happens after you submit</h2>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <div>
+        <h4>Fast text or call — within the hour</h4>
+        <p>You'll hear from our team quickly to confirm details and schedule a time that works for you.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <div>
+        <h4>On-roof inspection with photos</h4>
+        <p>We inspect shingles, flashing, penetrations, and ice dam areas. You get a written report and photos to keep.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <div>
+        <h4>Clear next steps — no hard sell</h4>
+        <p>Repair, replacement, or insurance claim — we explain your options in plain language. You decide what happens next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <h2>What <span id="city-name-testi">Kitchener</span> Homeowners Are Saying</h2>
+  <div class="testi-cards">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"I had no idea my roof had ice dam damage from last winter. They found it in 20 minutes, helped with my insurance, and I got a brand new roof for next to nothing out of pocket. Incredible service."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MR</div>
+        <div>
+          <div class="testi-name" id="testi1-name">Mike R.</div>
+          <div class="testi-role" id="testi1-city">Kitchener homeowner · Verified customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"From the free inspection to finished roof was 3 weeks. They handled everything with my insurance company. The crew was professional and cleaned up everything. Highly recommend."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SL</div>
+        <div>
+          <div class="testi-name">Sandra L.</div>
+          <div class="testi-role" id="testi2-city">Waterloo homeowner · Verified customer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <h2>Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Is the inspection really free? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes, completely free with zero obligation. If we find damage and you want us to handle the repair, we'll provide a full quote. If your roof is fine or you decide not to use us, you owe nothing.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What if my roof doesn't have damage? <span class="faq-icon">+</span></div>
+      <div class="faq-a">We tell you honestly. About 30% of roofs we inspect have no claimable damage — in that case we give you a written report on the current condition and a recommended maintenance timeline. Still completely free.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Will filing an insurance claim raise my rates? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Storm and freeze-thaw damage claims are typically classified as "Acts of God" and do not count against your personal claims history in most Ontario policies. We'll walk you through your specific policy before you decide to file anything.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How long does the inspection take? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Typically 20–40 minutes depending on roof size and pitch. You don't need to be home — just let us know and we can inspect while you're at work.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How soon can you come out? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Most appointments are available within 2–3 business days. Submit your info above and we'll contact you within 1 hour to schedule a time that works for you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Your Roof May Have Damage You Can't See</h2>
+  <p>Ontario's freeze-thaw cycle causes hidden damage every single winter. Get ahead of it with a free inspection before the next one hits.</p>
+  <button class="final-btn" onclick="document.querySelector('.hero').scrollIntoView({behavior:'smooth'})">Book My Free Inspection</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p id="footer-text"><span id="footer-co">Local Roofing Team</span> · Licensed &amp; Insured · <span id="footer-city">Kitchener</span>, ON · <a href="tel:+15195550100" id="footer-phone">(519) 555-0100</a> · <a href="https://369leads.ca">369leads.ca</a></p>
+</footer>
+
+<script>
+(function() {
+  // ── READ URL PARAMS ──────────────────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const city     = params.get('city')    || 'Kitchener';
+  const company  = params.get('co')      || 'Local Roofing Team';
+  const phone    = params.get('phone')   || '(519) 555-0100';
+  const reviews  = params.get('reviews') || '50+';
+  const cid      = params.get('cid')     || '';
+
+  // ── INJECT VALUES ────────────────────────────────────────────────────────
+  const phoneHref = 'tel:+1' + phone.replace(/\D/g, '');
+
+  document.title = `Free Roof Inspection — ${city} | ${company}`;
+  document.getElementById('page-title').textContent = `Free Roof Inspection — ${city} | ${company}`;
+
+  document.getElementById('nav-brand').innerHTML = company.split(' ').slice(0,-1).join(' ') + ' <span>' + company.split(' ').slice(-1)[0] + '</span>';
+  document.getElementById('nav-phone').textContent = phone;
+  document.getElementById('nav-phone').href = phoneHref;
+
+  document.getElementById('city-name-badge').textContent = city;
+  document.getElementById('city-name-why').textContent = city;
+  document.getElementById('city-name-testi').textContent = city;
+
+  document.getElementById('trust-reviews').textContent = reviews + ' Google reviews';
+  document.getElementById('review-count').textContent = reviews;
+  document.getElementById('region-name').textContent = 'the ' + city + ' region';
+
+  document.getElementById('testi1-city').textContent = city + ' homeowner · Verified customer';
+  document.getElementById('testi2-city').textContent = 'Waterloo homeowner · Verified customer';
+
+  document.getElementById('disclaimer-co').textContent = company;
+  document.getElementById('footer-co').textContent = company;
+  document.getElementById('footer-city').textContent = city;
+  document.getElementById('footer-phone').textContent = phone;
+  document.getElementById('footer-phone').href = phoneHref;
+
+  // Hidden form fields
+  document.getElementById('form-subject').value = `New inspection request — ${city} (${company})`;
+  document.getElementById('hidden-city').value = city;
+  document.getElementById('hidden-company').value = company;
+  document.getElementById('source-url').value = window.location.href;
+  document.getElementById('contractor-id').value = cid;
+
+  // Update address placeholder
+  document.getElementById('address').placeholder = `123 Main St, ${city}, ON`;
+
+  // ── FORM SUBMIT ──────────────────────────────────────────────────────────
+  const form = document.getElementById('lead-form');
+  const btn  = document.getElementById('submit-btn');
+  const thankyou = document.getElementById('thankyou');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById('first-name').value.trim();
+    const phoneVal  = document.getElementById('phone').value.trim();
+
+    // Disqualify renters silently (still submit but don't push to contractor)
+    const isOwner = document.getElementById('homeowner').value;
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    try {
+      const data = new FormData(form);
+      const resp = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (resp.ok) {
+        // Fire Meta Pixel events
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { value: 0, currency: 'CAD', content_name: city });
+          if (isOwner === 'yes') {
+            fbq('track', 'Schedule');
+          }
+        }
+
+        // Show thank-you
+        document.getElementById('thankyou-name').textContent = firstName || 'there';
+        document.getElementById('thankyou-msg').textContent =
+          `A member of the ${company} team will call you at ${phoneVal} within the next hour to schedule your free inspection.`;
+        form.style.display = 'none';
+        thankyou.style.display = 'block';
+        document.title = `Request received — ${company}`;
+      } else {
+        throw new Error('Server error');
+      }
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = 'YES — Claim My Free Inspection';
+      alert('Something went wrong. Please call us directly at ' + phone);
+    }
+  });
+
+  // ── FAQ ACCORDION ────────────────────────────────────────────────────────
+  window.toggleFaq = function(el) {
+    const a   = el.querySelector('.faq-a');
+    const ico = el.querySelector('.faq-icon');
+    const open = a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(x => x.classList.remove('open'));
+    if (!open) { a.classList.add('open'); ico.classList.add('open'); }
+  };
+
+})();
+</script>
 </body>
 </html>

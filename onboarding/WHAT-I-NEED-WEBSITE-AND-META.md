@@ -14,7 +14,7 @@ Your **`index.html` site is already built** locally with your logo. To make it �
 1. **Final domain name** (or use the default `.netlify.app` URL for now).  
 2. **Contact links** to replace placeholders: real **email**, **Calendly** (or booking URL), optional **phone** in `index.html` and `roi-calculator.html` (`#contact` section + mailto links).  
 3. **City / region copy** (optional): site is generic; for KW, we can tune the hero headline/subcopy if you want it **Kitchener–Waterloo-first** everywhere.  
-4. **Square logo** (optional): you already have **`369LeadsLogo.jpg`**. Web uses **`assets/369-leads-logo-web.png`** (auto-generated). If you get a **transparent PNG** master from a designer, replace that file with the same filename.
+4. **Logo:** site + decks + social graphics use **`assets/369-leads-logo-mark-rgba.png`** (transparent). Regenerate from your flat master with `python3 scripts/regenerate-logo-rgba.py` (see `assets/README.md`).
 
 **I do *not* need:** your password for hosting—**you** connect the domain in the host dashboard after upload.
 

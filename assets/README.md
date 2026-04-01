@@ -2,7 +2,8 @@
 
 | File | Purpose |
 |------|---------|
-| `369-leads-logo-web.png` | Website header/footer (`index.html`, `roi-calculator.html`). Regenerate from `369LeadsLogo.jpg` if logo changes. |
+| `369-leads-logo-mark-rgba.png` | **Primary web + graphics logo** — transparent PNG derived from `360leadspng.png` (source was JPEG-on-white). Used on site, decks, FB + carousel HTML. |
+| `369-leads-logo-web.png` | Legacy flat logo; keep as backup or replace if you standardize on one file only. |
 | `facebook-profile-500.jpg` | Facebook Page **profile picture** (square). |
 | `facebook-cover-820x312.jpg` | Facebook Page **cover** (recommended upload size). |
 | `facebook-cover-1640x624.jpg` | 2× version; optional upload if Meta accepts. |

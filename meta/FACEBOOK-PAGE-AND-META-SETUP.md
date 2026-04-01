@@ -8,7 +8,7 @@ Aligns with **KW_RoofingLeadGen_Strategy_LaunchGuide.docx** Section A.
 |-----|------|-------|
 | **Profile** | `assets/facebook-profile-500.jpg` | Square. Facebook displays ~170px; 500px gives sharp retina. |
 | **Cover** | `assets/facebook-cover-820x312.jpg` | Official **820×312** safe size. Also `facebook-cover-1640x624.jpg` if Meta accepts larger upload. |
-| **Website logo** | `assets/369-leads-logo-web.png` | Header/footer on `index.html`. |
+| **Website logo** | `assets/369-leads-logo-mark-rgba.png` | Header/footer on `index.html` / `roi-calculator.html`; social HTML templates. |
 
 Re-upload after you change your **.jpg** master logo.
 

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KW limited offer — Facebook graphic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-outer: #0b1424;
+      --bg-card: #13213c;
+      --accent: #e37e0c;
+      --accent-glow: rgba(227, 126, 12, 0.35);
+      --text: #ffffff;
+      --text-muted: #6b7a8f;
+      --divider: #2a3d56;
+      --cta-text: #0b1424;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: var(--bg-outer);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    /* Facebook feed — 4:5 portrait (1080×1350) */
+    .canvas {
+      width: 1080px;
+      height: 1350px;
+      background: var(--bg-outer);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .canvas::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 6px;
+      background: var(--accent);
+    }
+
+    .card-wrap {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      top: 96px;
+      bottom: 120px;
+    }
+
+    .card {
+      height: 100%;
+      background: var(--bg-card);
+      border-radius: 28px;
+      border: 1px solid rgba(100, 140, 200, 0.22);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 0 48px rgba(60, 120, 200, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-accent-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, var(--accent) 0%, #c96a0a 100%);
+      border-radius: 28px 0 0 28px;
+    }
+
+    .card-inner {
+      flex: 1;
+      padding: 88px 72px 72px 96px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-brand {
+      margin: 0 0 28px;
+    }
+
+    .post-brand img {
+      height: 108px;
+      width: auto;
+      display: block;
+    }
+
+    .eyebrow {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 40px;
+      line-height: 1.3;
+    }
+
+    .headline {
+      margin: 0 0 36px;
+      font-size: 76px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .headline .line-white {
+      color: var(--text);
+      display: block;
+    }
+
+    .headline .line-orange {
+      color: var(--accent);
+      display: block;
+    }
+
+    .divider {
+      height: 2px;
+      background: var(--divider);
+      margin: 0 0 40px;
+      max-width: 100%;
+    }
+
+    .body {
+      margin: 0 0 auto;
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 42ch;
+    }
+
+    .body p {
+      margin: 0 0 1em;
+    }
+
+    .body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cta-row {
+      margin-top: 48px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 56px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #f08c1a 0%, var(--accent) 100%);
+      color: var(--cta-text);
+      font-size: 32px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      box-shadow: 0 8px 28px var(--accent-glow);
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      font-size: 26px;
+      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      left: 50%;
+      bottom: 36px;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-hint svg {
+      width: 22px;
+      height: 22px;
+      opacity: 0.85;
+    }
+
+    /* Screen hint — hidden when screenshotting */
+  </style>
+</head>
+<body>
+  <div class="canvas" role="img" aria-label="Limited offer for KW roofing contractors">
+    <div class="card-wrap">
+      <div class="card">
+        <span class="card-accent-bar" aria-hidden="true"></span>
+        <div class="card-inner">
+          <div class="post-brand">
+            <img src="369-leads-logo-mark-rgba.png" alt="369 Leads" width="144" height="216" decoding="async" />
+          </div>
+          <p class="eyebrow">Limited offer — KW roofing contractors</p>
+          <h1 class="headline">
+            <span class="line-white">Your first $200 in</span>
+            <span class="line-orange">Meta ads is on me.</span>
+          </h1>
+          <div class="divider" aria-hidden="true"></div>
+          <div class="body">
+            <p>I run exclusive lead gen for one roofing contractor per territory in KW.</p>
+            <p>
+              You get a realistic planning range — typically <strong>10–15</strong> to <strong>30+</strong> qualified
+              homeowner inquiries per month by tier — people requesting free inspections, not shared lists.
+            </p>
+          </div>
+          <div class="cta-row">
+            <a class="cta" href="https://calendly.com/rrdegyves/consultant-call">Book a free 15-min call</a>
+          </div>
+          <p class="footer-note">Only 3 spots available — Cambridge, Waterloo, Guelph</p>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
