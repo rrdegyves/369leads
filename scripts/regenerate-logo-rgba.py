@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-Rebuild assets/369-leads-logo-mark-rgba.png from the flat master (JPEG or PNG).
-Default input: project root 360leadspng.png (may be misnamed JPEG).
+Publish the logo into assets/369-leads-logo.png.
+
+- Default source: repo root 369leads_logo.png (transparent RGBA master).
+- If the source has real alpha, it is re-saved with optimization only.
+- If the source is flat (no transparency), white-background removal runs (legacy).
 
 Usage:
   python3 scripts/regenerate-logo-rgba.py
-  python3 scripts/regenerate-logo-rgba.py path/to/flat-logo.jpg
+  python3 scripts/regenerate-logo-rgba.py path/to/logo.png
 """
 from pathlib import Path
 
@@ -15,8 +18,15 @@ except ImportError:
     raise SystemExit("Install Pillow: pip install Pillow")
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SRC = ROOT / "360leadspng.png"
-OUT = ROOT / "assets" / "369-leads-logo-mark-rgba.png"
+DEFAULT_SRC = ROOT / "369leads_logo.png"
+OUT = ROOT / "assets" / "369-leads-logo.png"
+
+
+def has_useful_alpha(img: Image.Image) -> bool:
+    if img.mode != "RGBA":
+        return False
+    extrema = img.split()[3].getextrema()
+    return extrema[0] < 255
 
 
 def remove_white_bg(img: Image.Image) -> Image.Image:
@@ -45,7 +55,10 @@ def main() -> None:
     if not src.is_file():
         raise SystemExit(f"Missing source: {src}")
     img = Image.open(src)
-    out = remove_white_bg(img)
+    if has_useful_alpha(img):
+        out = img.convert("RGBA")
+    else:
+        out = remove_white_bg(img)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     out.save(OUT, optimize=True)
     print(f"Wrote {OUT} ({out.size[0]}×{out.size[1]}) from {src}")

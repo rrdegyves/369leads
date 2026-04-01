@@ -6,7 +6,7 @@ WEBSITE (contractor-facing)
   roi-calculator.html + roi-calculator.js   → live prospect ROI tool
   campaign/          → homeowner Meta landing + thank-you (white-label per client)
   assets/            → logo PNG for site + Facebook profile/cover JPGs (see assets/README.md)
-  369LeadsLogo.jpg    → master logo
+  369leads_logo.png   → transparent master logo (sync to assets via scripts/regenerate-logo-rgba.py)
 
 META / LAUNCH
   meta/FACEBOOK-PAGE-AND-META-SETUP.md

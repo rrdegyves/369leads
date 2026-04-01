@@ -2,20 +2,19 @@
 
 | File | Purpose |
 |------|---------|
-| `369-leads-logo-mark-rgba.png` | **Primary web + graphics logo** — transparent PNG derived from `360leadspng.png` (source was JPEG-on-white). Used on site, decks, FB + carousel HTML. |
-| `369-leads-logo-web.png` | Legacy flat logo; keep as backup or replace if you standardize on one file only. |
+| `369-leads-logo.png` | **Primary web + graphics logo** — transparent RGBA master (800×800). Used on site, decks, FB + carousel HTML. Replace this file when the brand updates; keep a copy at project root (`369leads_logo.png`) if you like. |
+| `369-leads-logo-mark-rgba.png` | Legacy processed mark (optional delete). |
+| `369-leads-logo-web.png` | Legacy flat logo; backup only. |
 | `facebook-profile-500.jpg` | Facebook Page **profile picture** (square). |
 | `facebook-cover-820x312.jpg` | Facebook Page **cover** (recommended upload size). |
 | `facebook-cover-1640x624.jpg` | 2× version; optional upload if Meta accepts. |
 
-**Master logo:** `../369LeadsLogo.jpg` (project root).
+**Master logo:** `../369leads_logo.png` (project root, transparent). Copied to `assets/369-leads-logo.png` for the site.
 
-Regenerate web + Facebook assets by running from project root (requires Pillow in `.pypack`):
+Sync after you change the root file:
 
 ```bash
-PYTHONPATH=".pypack" python3 -c "
-# see repo history or ask for regenerate script
-"
+python3 scripts/regenerate-logo-rgba.py
 ```
 
-Or replace files manually in an image editor.
+(Requires Pillow, or copy `369leads_logo.png` to `assets/369-leads-logo.png` manually.)
