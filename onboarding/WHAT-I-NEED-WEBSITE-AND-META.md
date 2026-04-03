@@ -57,4 +57,4 @@ Per your **KW Launch Guide**, you need **both**:
 - [ ] Business Manager + ad account + payment method  
 - [ ] Website live OR Carrd “Home 1” linked from LinkedIn until static site is deployed  
 
-See also: **`meta/FACEBOOK-PAGE-AND-META-SETUP.md`**.
+See also: **`meta/FACEBOOK-PAGE-AND-META-SETUP.md`** and **`meta/LAUNCH-CHECKLIST.md`** (Facebook / Meta + graphics + ads).

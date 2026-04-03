@@ -40,3 +40,5 @@ You **do not** need to run ads on day one to finish this—just have BM + ad acc
 - Spend **foundation** dollars on Canva / domain / Carrd per your doc; your **full agency site** can remain this `index.html` project once hosted.  
 - **Outbound** can start as soon as **LinkedIn + Calendly + Page** exist; site URL can be “coming soon” for 24h if needed.  
 - Hold **ad test** budget until client pay or deliberate proof campaign.
+
+**Full launch order (checkboxes):** see **[LAUNCH-CHECKLIST.md](./LAUNCH-CHECKLIST.md)**.
